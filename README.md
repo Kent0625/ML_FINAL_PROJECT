@@ -86,7 +86,7 @@ The model is best understood as a tool for showing patterns in historical Senate
 
 ## How to View the Project
 
-For a non-technical reader, start with:
+Start with:
 
 1. This README
 2. `PUBMAT.png`
@@ -95,8 +95,6 @@ For a non-technical reader, start with:
 For a technical reader, open `Technical_Report.ipynb` in Jupyter Notebook, JupyterLab, or Google Colab.
 
 ## Authors
-
-Group 3:
 
 - Tagalog
 - Macalam
