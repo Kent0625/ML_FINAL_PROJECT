@@ -36,6 +36,13 @@ $app = Get-Content -Raw (Join-Path $root "app.py")
 Assert-Contains $readme "title:\s*The Life of a Bill" "README must define the Hugging Face Space title."
 Assert-Contains $readme "sdk:\s*docker" "README must configure the Docker SDK."
 Assert-Contains $readme "app_port:\s*8501" "README must expose Streamlit port 8501."
+$shortDescriptionMatch = [regex]::Match($readme, "(?m)^short_description:\s*(.+)$")
+if (-not $shortDescriptionMatch.Success) {
+    throw "README must define a Hugging Face short_description."
+}
+if ($shortDescriptionMatch.Groups[1].Value.Trim().Length -gt 60) {
+    throw "Hugging Face short_description must be 60 characters or fewer."
+}
 Assert-Contains $dockerfile "EXPOSE\s+8501" "Dockerfile must expose port 8501."
 Assert-Contains $dockerfile "streamlit.*app\.py" "Dockerfile must run the Streamlit entry point."
 Assert-Contains $requirements "streamlit" "requirements.txt must include Streamlit."

@@ -11,7 +11,7 @@ tags:
 - xgboost
 - public-policy
 pinned: false
-short_description: Explore historical patterns in Philippine Senate bill progress.
+short_description: Explore Philippine Senate bill progress with XGBoost.
 ---
 
 # The Life of a Bill
