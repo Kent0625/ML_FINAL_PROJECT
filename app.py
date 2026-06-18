@@ -261,8 +261,22 @@ st.markdown(
         padding: 0.9rem;
     }
 
+    div[data-testid="stMetric"] [data-testid="stMetricLabel"],
+    div[data-testid="stMetric"] [data-testid="stMetricValue"],
+    div[data-testid="stMetric"] [data-testid="stMarkdownContainer"] p {
+        color: var(--ink) !important;
+        opacity: 1 !important;
+    }
+
     div[data-testid="stAlert"] {
         border-radius: 4px;
+    }
+
+    div[data-testid="stAlert"] [data-testid="stMarkdownContainer"],
+    div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] p,
+    div[data-testid="stAlert"] [data-testid="stMarkdownContainer"] strong {
+        color: var(--ink) !important;
+        opacity: 1 !important;
     }
 
     @media (max-width: 700px) {

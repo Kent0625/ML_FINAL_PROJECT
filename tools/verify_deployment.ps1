@@ -53,5 +53,8 @@ Assert-Contains $app "First Reading" "App must display the First Reading class."
 Assert-Contains $app "Second Reading" "App must display the Second Reading class."
 Assert-Contains $app "Approved" "App must display the Approved class."
 Assert-Contains $app "predict_bill" "App must call the reusable prediction core."
+Assert-Contains $app '\[data-testid="stMetricLabel"\]' "App must explicitly style Streamlit metric labels for readable contrast."
+Assert-Contains $app '\[data-testid="stMetricValue"\]' "App must explicitly style Streamlit metric values for readable contrast."
+Assert-Contains $app '\[data-testid="stAlert"\].*\[data-testid="stMarkdownContainer"\]' "App must explicitly style Streamlit alert text for readable contrast."
 
 Write-Output "Deployment verification passed."
