@@ -1,3 +1,19 @@
+---
+title: The Life of a Bill
+emoji: "\U0001F3DB"
+colorFrom: blue
+colorTo: green
+sdk: docker
+app_port: 8501
+tags:
+- streamlit
+- machine-learning
+- xgboost
+- public-policy
+pinned: false
+short_description: Explore historical patterns in Philippine Senate bill progress.
+---
+
 # The Life of a Bill
 
 ## Predicting Legislative Status in the Philippine Senate Through Machine Learning
@@ -88,11 +104,33 @@ The model is best understood as a tool for showing patterns in historical Senate
 
 Start with:
 
-1. This README
-2. `PUBMAT.png`
-3. `Group 3 Presentation (2)-compressed.pdf`
+1. Try the deployed interactive model.
+2. Read this README.
+3. Review `PUBMAT.png` and `Group 3 Presentation (2)-compressed.pdf`.
 
 For a technical reader, open `Technical_Report.ipynb` in Jupyter Notebook, JupyterLab, or Google Colab.
+
+## Interactive Model
+
+The Streamlit app loads a pre-trained XGBoost artifact and lets visitors evaluate
+historical bill scenarios. It reports probabilities for First Reading, Second
+Reading, and Approved, together with the model's holdout evaluation context.
+
+This is an educational historical-pattern prototype. It is not legal, political,
+investment, or public-policy advice.
+
+### Run locally
+
+```bash
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+### Rebuild the model artifact
+
+```bash
+python train_model.py
+```
 
 ## Authors
 
